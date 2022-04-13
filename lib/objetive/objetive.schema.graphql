@@ -1,0 +1,12 @@
+type Objetive {
+    _id: ID!
+    title: String!
+    description: String!
+}
+
+type Query {
+    "Return all Objetives"
+    getObjetives: [Objetive]
+    "Return a objetive with identifier = id"
+    getObjetive(id: ID!): Objetive
+}

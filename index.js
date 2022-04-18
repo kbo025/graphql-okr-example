@@ -7,12 +7,12 @@ const express = require('express')
 const { graphqlHTTP } = require('express-graphql')
 const { readFileSync } = require('fs')
 const { join } = require('path')
-const resolversObjetive = require('./lib/objetive/objetive.resolvers')
+const resolversObjetive = require('./entities/objetive/resolvers')
 const PORT = process.env.port || 4000
 
 // Construct a schema, using GraphQL schema language
 const typeDefObjetive = readFileSync(
-  join(__dirname, 'lib', 'objetive', 'objetive.schema.graphql'),
+  join(__dirname, 'entities', 'objetive', 'schema.graphql'),
   'utf-8'
 )
 const schemaObjetive = makeExecutableSchema({ typeDefs: typeDefObjetive, resolvers: resolversObjetive })

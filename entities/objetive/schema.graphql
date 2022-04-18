@@ -1,0 +1,28 @@
+type Objetive {
+    _id: ID!
+    slug: String!
+    title: String!
+    description: String!
+}
+
+type Query {
+    "Return all Objetives"
+    getObjetives: [Objetive]
+    "Return an objetive with identifier = id"
+    getObjetive(id: ID!): Objetive
+}
+
+input ObjetiveInput {
+    slug: String!
+    title: String!
+    description: String!
+}
+
+type Mutation {
+  "Create an Objetive"
+  createObjetive(input: ObjetiveInput!): Objetive
+  "Update an Objetive"
+  updateObjetive(input: ObjetiveInput!): Objetive
+  "Delete an Objetive"
+  deleteObjetive(input: ObjetiveInput!): Objetive
+}
